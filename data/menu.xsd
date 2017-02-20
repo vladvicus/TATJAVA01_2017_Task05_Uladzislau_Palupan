@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.epam.tc.com/items"
+           xmlns="http://www.epam.tc.com/items"
+           elementFormDefault="qualified">
+
+
+    <xs:element name="items" type="ItemType"/>
+
+    <xs:complexType name="ItemType">
+        <xs:complexContent>
+            <xs:restriction base="xs:anyType">
+                <xs:sequence>
+                    <xs:element name="cold_dishes" type="Dishes"/>
+                    <xs:element name="hot_dishes" type="Dishes"/>
+                    <xs:element name="breakfasts" type="Dishes"/>
+                </xs:sequence>
+            </xs:restriction>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="Dishes">
+        <xs:sequence>
+            <xs:element name="dish" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:complexContent>
+                        <xs:restriction base="xs:anyType">
+                            <xs:sequence>
+                                <xs:element name="foto">
+                                    <xs:complexType>
+                                        <xs:attribute name="src" type="xs:anyURI"/>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="name" type="xs:string"/>
+                                <xs:element name="description" minOccurs="0" maxOccurs="unbounded">
+                                    <xs:complexType>
+                                        <xs:complexContent>
+                                            <xs:extension base="xs:anyType">
+                                                <xs:attribute name="price" default="">
+                                                    <xs:simpleType>
+                                                        <xs:restriction base="xs:string">
+                                                            <xs:pattern value="\d{1,3}руб|\s*"/>
+                                                        </xs:restriction>
+                                                    </xs:simpleType>
+                                                </xs:attribute>
+
+                                            </xs:extension>
+                                        </xs:complexContent>
+                                    </xs:complexType>
+                                </xs:element>
+                                <xs:element name="portion">
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:pattern value="(\d{1,2}шт.)|[\d//]+"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:element>
+
+                            </xs:sequence>
+                            <xs:attribute name="id" type="xs:ID" use="required"/>
+                        </xs:restriction>
+                    </xs:complexContent>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
+
+</xs:schema>

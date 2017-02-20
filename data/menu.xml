@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<items xmlns="http://www.epam.tc.com/items"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.epam.tc.com/items menu.xsd">
+
+    <cold_dishes>
+        <dish id="c1">
+            <foto src="http://photo0_1.jpg"/>
+            <name>Ассорти рыбное</name>
+            <description price="10руб">Слабосоленая форель,семга</description>
+            <portion>100/20/15</portion>
+        </dish>
+        <dish id="c2">
+            <foto src="http://photo0_2.jpg"/>
+            <name>Тарталетки с красной икрой</name>
+            <description price="10руб">Тарталетки с красной икрой</description>
+            <portion>60/50</portion>
+        </dish>
+    </cold_dishes>
+    <hot_dishes>
+        <dish id="h1">
+            <foto src="http://photo1_1.jpg"/>
+            <name>Лобио с шампиньонами</name>
+            <description price="8руб">Фасоль с шампиньонами и грецким орехом</description>
+            <portion>150/5</portion>
+        </dish>
+        <dish id="h2">
+            <foto src="http://photo1_2.jpg"/>
+            <name>Жульен</name>
+            <description price="145руб">Жульен с курицей</description>
+            <description price="155руб">Жульен с грибами</description>
+            <portion>120/1</portion>
+        </dish>
+    </hot_dishes>
+    <breakfasts>
+        <dish id="a1">
+            <foto src="http://photo2_1.jpg"/>
+            <name>Глазунья</name>
+            <description price="">2 яйца с ветчиной</description>
+            <description price="5руб">2 яйца с сыром</description>
+            <description price="">2 яйца с помидором</description>
+            <portion>150</portion>
+        </dish>
+        <dish id="a2">
+            <foto src="http://photo2_2.jpg"/>
+            <name>Омлет</name>
+            <description price="10руб"></description>
+            <portion>100</portion>
+        </dish>
+    </breakfasts>
+</items>
